@@ -1,5 +1,7 @@
 name: "🚀 Releaser"
-
+defaults:
+  run:
+    working-directory: plugin_quantumgraph
 on:
   push:
     tags: "*"

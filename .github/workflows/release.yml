@@ -3,6 +3,7 @@ name: "🚀 Releaser"
 on:
   push:
     tags: "*"
+  workflow_dispatch:
 
 env:
   PROJECT_FOLDER: "quantumgraph"

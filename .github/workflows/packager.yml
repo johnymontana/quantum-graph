@@ -1,4 +1,8 @@
 name: "📦 Packager"
+defaults:
+  run:
+    working-directory: plugin_quantumgraph
+  
 
 env:
   PROJECT_FOLDER: "quantumgraph"
@@ -6,7 +10,8 @@ env:
 
 on:
   push:
-    branches: [ master ]
+    branches: [ main ]
+  workflow_dispatch:
 
 
 jobs:

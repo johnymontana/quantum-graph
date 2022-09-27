@@ -1,1 +1,1 @@
-# quantum-graph
+![Quantum Graph logo](img/quantum-graph.png)

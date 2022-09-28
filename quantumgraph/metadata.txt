@@ -1,0 +1,16 @@
+[general]
+name=QuantumGraph
+description=
+about=
+version=0.1.0
+qgisMinimumVersion=3.16
+author=
+email=
+changelog=
+tags=
+repository=https://github.com/johnymontana/quantum-graph
+tracker=https://github.com/johnymontana/quantum-graph/issues
+homepage=https://github.com/johnymontana/quantum-graph
+category=Plugins
+experimental=True
+deprecated=False

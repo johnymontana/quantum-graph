@@ -21,7 +21,7 @@ vlayer.updateFields()
 LINE_GEOMETRY_QUERY = """
 MATCH (g1:Geo)<-[:ABOUT_GEO]-(:Article)-[:ABOUT_GEO]->(g2:Geo) 
 WHERE g1.location IS NOT NULL AND g2.location IS NOT NULL
-WITH g1, g2, COUNT(*) AS score WHERE g1 < g2
+WITH g1, g2, COUNT(*) AS score WHERE g1.location.longitude < g2.location.longitude
 RETURN g1.location.latitude AS g1lat, 
        g1.location.longitude AS g1lon, 
        g2.location.latitude AS g2lat, 
@@ -47,7 +47,7 @@ with driver.session() as session:
     for l in lines:
         point1 = QgsPointXY(l['g1lon'], l['g1lat'])
         point2 = QgsPointXY(l['g2lon'], l['g2lat'])
-        vertices = d.geodesicLine(point1, point2, 100000)
+        vertices = d.geodesicLine(point1, point2, 10000)
         geodesic_line = QgsGeometry.fromPolylineXY(vertices[0])
         f = QgsFeature()
         f.setGeometry(geodesic_line)
